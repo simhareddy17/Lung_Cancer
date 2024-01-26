@@ -1,0 +1,140 @@
+{%  load static %}
+<html>
+<head>
+    <title>login</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <style>
+      body {
+  font-family:cambria;
+  background-color: #fff;
+  min-height: 100vh;
+  border:3px solid;
+  border-color:#03a9f4;
+  }
+
+.login-section-wrapper {
+
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  padding: 164.5px 100px;
+  background-color:#F5F5DC;
+
+  }
+
+.login-wrapper {
+  width: 300px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  }
+
+  .login-wrapper label {
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+
+   }
+
+  .login-wrapper .form-control {
+    border: none;
+    border-bottom: 2px solid #e7e7e7;
+    border-radius: 10px;
+    padding: 9px ;
+    min-height: 40px;
+    font-size: 18px;
+    font-weight: normal; }
+    .login-wrapper .form-control::placeholder {
+      color: #b0adad; }
+
+
+  .login-wrapper .login-btn {
+    padding: 13px 20px;
+    background-color:#03a9f4;
+    border-radius:10px;
+    font-size: 20px;
+    font-weight: bold;
+    color:#fff ;
+    margin-bottom: 14px;
+    }
+    .login-wrapper .login-btn:hover {
+      border: 1px solid #fdbb28;
+      background-color: #fff;
+      color: #fdbb28;
+      }
+
+  .login-wrapper a.forgot-password-link {
+    color: #080808;
+    font-size: 14px;
+    text-decoration: underline;
+    display: inline-block;
+    margin-bottom: 54px;
+     }
+
+  .login-wrapper-footer-text
+  {
+    font-size: 16px;
+    color:darkred;
+    margin-bottom: 0;
+    }
+
+   .login-wrapper-header-text{
+   font-size: 16px;
+    color:red;
+    margin-bottom: 0;
+     }
+
+
+.login-title {
+  font-size: 30px;
+  color: #000;
+  font-weight: bold;
+  margin-bottom: 25px;
+   }
+
+   .login-img {
+  width:100%;
+  height:100%;
+  background-color:#6495ED;
+  object-fit:cover;
+}
+
+
+    </style>
+</head>
+<body>
+<main>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-6 login-section-wrapper">
+          <div class="login-wrapper my-auto">
+            <h1 class="login-title"><u>Log In</u></h1>
+            <form action="login" method="POST">
+             {% csrf_token %}
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" name="email" class="form-control" placeholder="enter email">
+              </div>
+              <div class="form-group mb-4">
+                <label>Password</label>
+                <input type="password" name="password" class="form-control" placeholder="enter your passsword">
+              </div>
+              <input type="submit" class="btn btn-block login-btn" value="Login">
+            </form>
+            <div class="login-wrapper-header-text">
+            {% for message in messages %}
+            <h4>{{message}}</h4>
+             {%  endfor %}
+          </div>
+            <p class="login-wrapper-footer-text">Don't have an account? <a href="register" class="text-reset"><u>Register here</u></a></p>
+          </div>
+        </div>
+          <div class="col-sm-6 px-0 d-none d-sm-block">
+          <img src="{% static 'images/lcancer.jpg' %}" class="login-img"  >
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

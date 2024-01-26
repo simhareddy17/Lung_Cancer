@@ -1,0 +1,83 @@
+{% load static %}
+<html>
+<head>
+    <title>home</title>
+<style>
+.a
+{
+  color : red;
+  font-size : 20px;
+  text-decoration : none;
+}
+
+  button {
+    background-color:DodgerBlue;
+    color:black;
+    font-size:20px ;
+    font-family:ALEGREYA ;
+    height:50px;
+    border:1px solid;
+    border-radius:25px;
+    cursor: pointer;
+    width: 100%;
+    box-shadow: none;
+  }
+ div{
+ border-radius:8px;
+ border:3px  solid #6495ED;
+ }
+
+  body{
+      background:url({% static 'images/bgimage.jpg' %});
+       background-size:cover;
+
+    }
+
+.xx
+{
+  text-align : justify;
+font-size : 18px;
+line-height : 30px;
+text-indent : 0px;
+padding : 25px;
+}
+
+
+</style>
+</head>
+<body>
+<table><tr height="20px"></tr></table>
+<table border='0' width="100%" ; text-align="center" cellspacing="0" cellpadding="0"  align="center">
+<tr height="10px">
+<td width="70%">
+    <button type="submit">DISEASES PREDICTION</button>
+</td>
+<td width="10%"><form method="get" action="login" style="font-size: 0px">
+    <button type="submit">Login</button>
+</form></td>
+<td width="10%"><form method="get" action="register" style="font-size: 0px" >
+    <button type="submit">Register</button>
+</form></td>
+</tr>
+</table>
+    <marquee
+        direction="right"
+        behavior="alternate">
+   <p style="font-size:20px ; font-family:cambria"><b>WELCOME TO PREDICTION OF DIFFERENT CANCER DISEASES SITE!!!</b></p>
+</marquee>
+<div>
+<table border='0' width="100%" cellspacing="0" cellpadding="0"  align="center" bgcolor="MintCream" >
+
+<tr height="340px" style="background-image:url({% static 'images/lung.jpg' %}) ;">
+  <td width=6%></td>
+<td width="30%"><img src="{% static 'images/pic1.jpg' %}" height="320px" width="100%" >
+</td>
+<td width=6%></td>
+</table>
+
+
+</div>
+</body>
+</html>
+
+
